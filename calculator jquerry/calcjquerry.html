@@ -1,0 +1,119 @@
+<!DOCKTYPE html>
+<head>
+<title>Calculator</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+input[type=button]
+{
+width:97;
+height:53;
+margin-top:4px;
+outline:none;
+background-color:#4dc3ff;
+background-image:linear-gradient(#f2f2f2,#f2f2f2);
+font-size:25px;
+border:none;
+}
+div{
+background-color:#6d6d6d;
+width:550;
+height:400;
+border-radius:10px;
+}
+
+</style>
+<script>
+$(document).ready(function(e){
+
+  $(".num").click(function(){
+      var a =$(this).val();
+    $(".dis").val($(".dis").val() +a);
+  });
+
+$(".ac").click(function(){
+    $(".dis").val(null);
+  });
+
+$(".eq").click(function(){
+    $(".dis").val(eval($(".dis").val()));
+  });
+
+$(".sin").click(function(){
+    $(".dis").val(Math.sin($(".dis").val()));
+  });
+
+$(".tan").click(function(){
+    $(".dis").val(Math.tan($(".dis").val()));
+  });
+
+$(".cos").click(function(){
+    $(".dis").val(Math.cos($(".dis").val()));
+  });
+
+$(".log").click(function(){
+    $(".dis").val(Math.log($(".dis").val()));
+  });
+
+$(".sq").click(function(){
+    $(".dis").val(Math.pow($(".dis").val(),2));
+  });
+
+$(".pie").click(function(){
+   a=$(".dis").val();
+$(".dis").val(eval(a*3.14));
+  });
+
+$("#back").click(function(){
+var num=$(".dis").val();
+   num=num.substring(0, num.length-1);
+$(".dis").val(num);
+  });
+});
+
+</script>
+</head>
+<body>
+ 
+<center><h1 style=" font-size:100; color:#33ccff;  text-shadow: 4px 4px #ccf2ff;">Calculator</h1></center>
+<center>
+<div>
+<br>
+<input type="text" style="text-align:right;
+background-image:linear-gradient(white); width:510; height:60; font-size:20;" class="dis" placeholder="0.0 " disabled><br>
+<br>
+<input type="button" id="cv" class="sin" value="sin">
+<input type="button" id="cv" class="sq" value="^" >
+<input type="button" id="cv"class="log" value="lg" >
+<input type="button" id="cv" id="back" value="<-" >
+<input type="button" id="cv" class="ac" value="AC" style="background-image:linear-gradient(#ff471a,#ff471a);">
+<br>
+<input type="button" id="cv" class="cos" value="cos" >
+<input type="button" id="cv" class="num" value="7">
+<input type="button" id="cv" class="num" value="8"  >
+<input type="button" id="cv" class="num" value="9">
+<input type="button" id="cv" class="num" value="/" >
+<br>
+<input type="button" id="cv" class="tan" value="tan" >
+<input type="button" id="cv" class="num" value="4">
+<input type="button" id="cv"class="num" value="5" >
+<input type="button" id="cv" class="num" value="6"  >
+<input type="button" id="cv" class="num" value="*">
+<br>
+<input type="button" id="cv" class="pie" value="pi" >
+
+<input type="button" id="cv" class="num" value="1">
+<input type="button" id="cv" class="num" value="2">
+<input type="button" id="cv" class="num" value="3">
+<input type="button" id="cv" class="num" value="-" >
+<br>
+<input type="button" id="cv" class="per" value="%" >
+<input type="button" id="cv" class="num" value="." >
+<input type="button" id="cv" class="num" value="0">
+<input type="button" id="cv" class="eq" value="=" style="background-image:linear-gradient(#ff471a,#ff471a);">
+<input type="button" id="cv" class="num" value="+" >
+
+<br>
+</center><br>
+</div>
+</body>
+</html>
